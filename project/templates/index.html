@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Machine Learnin Web App</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+
+<body>
+	<div class="form-box">
+		<h2>Price prediction</h2>
+
+		<form action="{{url_for('predict')}}" method="post">
+
+			<div class="imput-box">
+				<input type="text" name="rooms" required>
+				<label for="rooms">Rooms</label>
+			</div>
+
+			<div class="imput-box">
+				<input type="text" name="distance" required>
+				<label for="distance">Distance</label>
+			</div>
+
+			<button type="submit">Predict value!</button>
+
+		</form>
+
+		<div class="message">
+			{{prediction_text}}
+		</div>
+	</div>
+</body>
+
+</html>
